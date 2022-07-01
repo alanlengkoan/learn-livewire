@@ -30,7 +30,7 @@ class Upd extends Component
             'alamat'  => 'required',
         ]);
 
-        dd($this->id);
+        dd($this->nama);
 
         $data = Data::find($this->id);
         $data->update([

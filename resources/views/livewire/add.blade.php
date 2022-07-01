@@ -1,4 +1,5 @@
 <div>
+    <h3>Tambah</h3>
     <form wire:submit.prevent="save">
         <div class="mb-3">
             <label for="nama" class="form-label">Nama</label>
