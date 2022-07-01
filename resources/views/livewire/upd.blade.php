@@ -1,7 +1,10 @@
 <div>
     <h3>Ubah</h3>
     <form wire:submit.prevent="save">
-        <input type="hidden" name="" id="" wire:model="id" />
+        <!-- begin:: id -->
+        <input type="hidden" name="" id="" wire:model="id_data" />
+        <!-- end:: id -->
+
         <div class="mb-3">
             <label for="nama" class="form-label">Nama</label>
             <input type="text" class="form-control form-sm @error('nama') is-invalid @enderror" wire:model="nama" name="nama" id="nama" />
@@ -22,6 +25,6 @@
             <input type="text" class="form-control form-sm @error('alamat') is-invalid @enderror" wire:model="alamat" name="alamat" id="alamat" />
             @error('alamat') <span class="invalid-feedback"><strong>{{ $message }}</strong></span> @enderror
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-sm btn-success">Simpan</button>
     </form>
 </div>

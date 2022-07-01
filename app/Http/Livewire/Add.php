@@ -35,14 +35,14 @@ class Add extends Component
 
         $this->resetInput();
 
-        $this->emit('dataSaved', $data);
+        $this->emit('dataSaveAdd', $data);
     }
 
     public function resetInput()
     {
-        $this->nama = null;
-        $this->email = null;
+        $this->nama    = null;
+        $this->email   = null;
         $this->telepon = null;
-        $this->alamat = null;
+        $this->alamat  = null;
     }
 }

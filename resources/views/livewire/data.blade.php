@@ -20,7 +20,7 @@
                 <td>{{ $row->alamat }}</td>
                 <td>
                     <button wire:click="getData({{ $row->id }})" type="button" class="btn btn-sm btn-primary">Ubah</button>
-                    <button type="button" class="btn btn-sm btn-danger">Hapus</button>
+                    <button wire:click="delData({{ $row->id }})" type="button" class="btn btn-sm btn-danger">Hapus</button>
                 </td>
             </tr>
             @endforeach

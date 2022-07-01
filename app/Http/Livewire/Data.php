@@ -11,7 +11,8 @@ class Data extends Component
     public $statusUpdate = false;
 
     protected $listeners = [
-        'dataSaved' => 'handleDataSaved',
+        'dataSaveAdd' => 'handleDataSaveAdd',
+        'dataSaveUpd' => 'handleDataSaveUpd',
     ];
 
     public function render()
@@ -24,13 +25,27 @@ class Data extends Component
 
     public function getData($id)
     {
-        $this->statusUpdate = true;
         $data = ModelsData::find($id);
         $this->emit('getData', $data);
     }
 
-    public function handleDataSaved()
+    public function delData($id)
     {
-        Session::flash('success', 'Data berhasil ditambahkan'); 
+        $data = ModelsData::find($id);
+        $data->delete();
+    }
+
+    // for handle insert data
+    public function handleDataSaveAdd()
+    {
+        // Session::flash('success', 'Data berhasil ditambahkan');
+        dd('Data berhasil ditambahkan');
+    }
+
+    // for handle update data
+    public function handleDataSaveUpd()
+    {
+        // Session::flash('success', 'Data berhasil ditambahkan');
+        dd('Data berhasil diubah');
     }
 }

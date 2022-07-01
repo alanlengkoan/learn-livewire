@@ -30,9 +30,7 @@ class Upd extends Component
             'alamat'  => 'required',
         ]);
 
-        dd($this->nama);
-
-        $data = Data::find($this->id);
+        $data = Data::find($this->id_data);
         $data->update([
             'nama'    => $this->nama,
             'email'   => $this->email,
@@ -42,7 +40,7 @@ class Upd extends Component
 
         $this->resetInput();
 
-        $this->emit('dataSaved', $data);
+        $this->emit('dataSaveUpd', $data);
     }
 
     public function handleGetData($data)
@@ -51,14 +49,14 @@ class Upd extends Component
         $this->email   = $data['email'];
         $this->telepon = $data['telepon'];
         $this->alamat  = $data['alamat'];
-        $this->id      = $data['id'];
+        $this->id_data = $data['id'];
     }
 
     public function resetInput()
     {
-        $this->nama = null;
-        $this->email = null;
+        $this->nama    = null;
+        $this->email   = null;
         $this->telepon = null;
-        $this->alamat = null;
+        $this->alamat  = null;
     }
 }

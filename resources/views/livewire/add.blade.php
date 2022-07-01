@@ -21,6 +21,6 @@
             <input type="text" class="form-control form-sm @error('alamat') is-invalid @enderror" wire:model="alamat" name="alamat" id="alamat" />
             @error('alamat') <span class="invalid-feedback"><strong>{{ $message }}</strong></span> @enderror
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-sm btn-success">Simpan</button>
     </form>
 </div>
