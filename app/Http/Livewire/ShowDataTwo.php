@@ -3,32 +3,13 @@
 namespace App\Http\Livewire;
 
 use App\Models\Data;
-use Illuminate\Database\Eloquent\Builder;
-use Rappasoft\LaravelLivewireTables\DataTableComponent;
-use Rappasoft\LaravelLivewireTables\Views\Column;
+use Illuminate\View\Component;
 
-class ShowDataTwo extends DataTableComponent
+class ShowDataTwo extends Component
 {
-    public function columns(): array
+    // untuk view
+    public function render()
     {
-        return [
-            Column::make('Name')
-                ->sortable()
-                ->searchable(),
-            Column::make('E-mail', 'email')
-                ->sortable()
-                ->searchable(),
-            Column::make('Created At', 'created_at')
-                ->sortable()
-                ->searchable(),
-            Column::make('Updated At', 'updated_at')
-                ->sortable()
-                ->searchable(),
-        ];
-    }
-
-    public function query(): Builder
-    {
-        return Data::query();
+       
     }
 }
