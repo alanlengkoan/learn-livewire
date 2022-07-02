@@ -22,7 +22,7 @@ class Add extends Component
         $this->validate([
             'nama'    => 'required',
             'email'   => 'required|email',
-            'telepon' => 'required',
+            'telepon' => 'required|numeric',
             'alamat'  => 'required',
         ]);
 
@@ -35,14 +35,14 @@ class Add extends Component
 
         $this->resetInput();
 
-        $this->emit('dataSaved', $data);
+        $this->emit('dataSavedAdd', $data);
     }
 
     public function resetInput()
     {
-        $this->nama = null;
-        $this->email = null;
+        $this->nama    = null;
+        $this->email   = null;
         $this->telepon = null;
-        $this->alamat = null;
+        $this->alamat  = null;
     }
 }
