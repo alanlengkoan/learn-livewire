@@ -1,10 +1,10 @@
 <!-- begin:: base -->
-@extends('base_two')
+@extends('base_one')
 <!-- end:: base -->
 
 <!-- begin:: content -->
 @section('content')
-<livewire:data />
+<livewire:show-data-one />
 @endsection
 <!-- end:: content -->
 

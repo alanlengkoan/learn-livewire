@@ -1,5 +1,17 @@
 <div>
-    <table class="table">
+    @if (Session::has('success'))
+    <div class="alert alert-success" id="alert-show">
+        {{ session('success') }}
+    </div>
+    @endif
+
+    @if ($updateStatus)
+    <livewire:upd />
+    @else
+    <livewire:add />
+    @endif
+    <hr>
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th scope="col">#</th>

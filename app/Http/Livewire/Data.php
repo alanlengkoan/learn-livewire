@@ -8,13 +8,14 @@ use Livewire\Component;
 
 class Data extends Component
 {
-    public $statusUpdate = false;
+    public $updateStatus = false;
 
     protected $listeners = [
         'dataSavedAdd' => 'handleDataSavedAdd',
         'dataSavedUpd' => 'handleDataSavedUpd',
     ];
 
+    // untuk view
     public function render()
     {
         $data = [
@@ -25,6 +26,7 @@ class Data extends Component
 
     public function getData($id)
     {
+        $this->updateStatus = true;
         $data = ModelsData::find($id);
         $this->emit('getData', $data);
     }
@@ -34,19 +36,18 @@ class Data extends Component
         if ($id) {
             $data = ModelsData::find($id);
             $data->delete();
-            // dd('Data berhasil dihapus!');
+            Session::flash('success', 'Data berhasil dihapus!'); 
         }
     }
 
     public function handleDataSavedAdd()
     {
-        // Session::flash('success', 'Data berhasil ditambahkan'); 
-        // dd('Data berhasil ditambahkan!');
+        Session::flash('success', 'Data berhasil ditambahkan!');
     }
 
     public function handleDataSavedUpd()
     {
-        // Session::flash('success', 'Data berhasil diubah'); 
-        // dd('Data berhasil diubah!');
+        $this->updateStatus = false;
+        Session::flash('success', 'Data berhasil diubah!'); 
     }
 }

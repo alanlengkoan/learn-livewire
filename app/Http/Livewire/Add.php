@@ -12,6 +12,7 @@ class Add extends Component
     public $telepon;
     public $alamat;
 
+    // untuk view
     public function render()
     {
         return view('livewire.add');

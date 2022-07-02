@@ -16,6 +16,7 @@ class Upd extends Component
         'getData' => 'handleGetData',
     ];
 
+    // untuk view
     public function render()
     {
         return view('livewire.upd');

@@ -4,7 +4,7 @@
 
 <!-- begin:: content -->
 @section('content')
-<livewire:data />
+<livewire:show-data-two />
 @endsection
 <!-- end:: content -->
 
