@@ -16,6 +16,7 @@ class Upd extends Component
         'getData' => 'handleGetData',
     ];
 
+    // untuk view
     public function render()
     {
         return view('livewire.upd');
@@ -26,7 +27,7 @@ class Upd extends Component
         $this->validate([
             'nama'    => 'required',
             'email'   => 'required|email',
-            'telepon' => 'required',
+            'telepon' => 'required|numeric',
             'alamat'  => 'required',
         ]);
 
@@ -40,7 +41,7 @@ class Upd extends Component
 
         $this->resetInput();
 
-        $this->emit('dataSaveUpd', $data);
+        $this->emit('dataSavedUpd', $data);
     }
 
     public function handleGetData($data)

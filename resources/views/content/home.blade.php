@@ -4,7 +4,7 @@
 
 <!-- begin:: content -->
 @section('content')
-<livewire:data />
+<h2>Halo, Selamat Datang di Belajar Livewire</h2>
 @endsection
 <!-- end:: content -->
 
